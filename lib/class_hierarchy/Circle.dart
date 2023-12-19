@@ -4,14 +4,24 @@ import 'Shape.dart';
 
 // Класс Circle, наследующийся от Shape
 class Circle extends Shape {
+  static const double pi = 3.14159;
+  static int numberOfCircles = 0;
+
   double radius;
 
-  // Конструктор класса Circle
-  Circle(this.radius);
+  // Конструктор
+  Circle(this.radius) {
+    numberOfCircles++;
+  }
 
-  // Реализация метода calculateArea для круга
+  // Статическая функция для получения числа созданных кругов
+  static int getNumberOfCircles() {
+    return numberOfCircles;
+  }
+
   @override
   double calculateArea() {
-    return pi * radius * radius;
+    // TODO: implement calculateArea
+    throw UnimplementedError();
   }
 }
